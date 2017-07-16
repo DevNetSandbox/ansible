@@ -1,3 +1,9 @@
-iperf, iperf3 - for iperf demo against Contiv Bandwidth policy  
-aipine - for isolation policy demo using contiv  
-selenium-node-chrome-rc - Chrome web browser to demo bandwidth policy  
+# Contiv Network Policy Demo
+## Contiv Bandwidth policy  
+*iperf  
+*iperf3 
+## Contiv Isolation policy 
+*aipine   
+ping command between 2 aipine pods
+*selenium-node-chrome-rc 
+Chrome web browser to demo bandwidth policy  
