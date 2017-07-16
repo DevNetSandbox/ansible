@@ -1,10 +1,10 @@
-This repo is designed for Cisco DevNet Sandbox Contiv provisioning & Demo.  
+# This repo is for Cisco DevNet Sandbox Contiv provisioning & Demo 
 
 - ansible
 
-It contains a Ansible playbook project to setup 4-nodes Kubernetes cluster and Contiv network
+It contains an Ansible playbook to run 4-nodes Kubernetes cluster and Contiv network
 
 
 - yaml
 
-It lists yaml files using in Kubernets for Contiv isolation, bandwidth policy demo  
+It lists demo purpose yaml files using in Kubernets for Contiv isolation and bandwidth policy  
