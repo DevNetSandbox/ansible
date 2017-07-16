@@ -4,23 +4,21 @@
 * The IP address definition could be changed at: ./roles/kubeadm/install/defaults/main.yml
 
 
-master_ip: "10.10.20.1"
+    master_ip: "10.10.20.1"
 
-worker1_ip: "10.10.20.2"
+    worker1_ip: "10.10.20.2"
 
-worker2_ip: "10.10.20.3"
+    worker2_ip: "10.10.20.3"
 
-worker3_ip: "10.10.20.4"
+    worker3_ip: "10.10.20.4"
 
-master: netmaster
+    master: netmaster
 
-worker1: k8s-worker-1
+    worker1: k8s-worker-1
 
-worker2: k8s-worker-2
+    worker2: k8s-worker-2
 
-worker3: k8s-worker-3
-
-
+    worker3: k8s-worker-3
 * contiv version can be changed once it is updated:
 https://github.com/iceworld/ansible/blob/master/group_vars/all.yml:
 contiv_ver: 1.0.0
