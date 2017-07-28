@@ -63,6 +63,12 @@
 
 #add end
 #
+- name: Reset previous installation 
+  command: "{{ item }}"
+  with_items:
+    - kubeadm reset
+    - rm -rf /etc/kubernetes/
+  ignore_errors: true
 
 - name: Install kubeadm packages
   yum:
@@ -70,8 +76,8 @@
     state: latest
     update_cache: true
 
-- name: synctime to NTP server
-  command: ntpdate -s time.nist.gov
+- name: sycntime
+  command: ntpdate -s 173.38.201.67
   ignore_errors: true
 
 - name: Enable and start kubeadm services

@@ -1,27 +1,20 @@
 # Ansible playbook and roles to create a simple Kubernetes cluster with kubeadm
 ## Configuration
-* run ./deploy.sh to configured your nodes within k8s.
-* The IP address definition could be changed at: ./roles/kubeadm/install/defaults/main.yml
+1. run ./deploy.sh to configured your nodes within k8s.
+2. the IP address definition could be changed at: ./roles/kubeadm/install/defaults/main.yml
+master_ip: "10.10.20.57"
+worker1_ip: "10.10.20.58"
+worker2_ip: "10.10.20.59"
+worker3_ip: "10.10.20.60"
 
+master: netmaster
+worker1: k8s-worker-1
+worker2: k8s-worker-2
+worker3: k8s-worker-3
 
-    master_ip: "10.10.20.1"
-
-    worker1_ip: "10.10.20.2"
-
-    worker2_ip: "10.10.20.3"
-
-    worker3_ip: "10.10.20.4"
-
-    master: netmaster
-
-    worker1: k8s-worker-1
-
-    worker2: k8s-worker-2
-
-    worker3: k8s-worker-3
-* contiv version can be changed once it is updated:
+3. contiv version can be changed once it is updated:
 https://github.com/iceworld/ansible/blob/master/group_vars/all.yml:
-contiv_ver: 1.0.0
+contiv_ver: 1.0.0-beta.3
 the contiv release page: https://github.com/contiv/install/releases
 
 ## Goal

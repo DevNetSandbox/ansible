@@ -28,7 +28,6 @@ cluster_name=kubeadm_1
 # If you need to specify a specific ip address for the master, uncomment the above and edit
 
 [nodes]
-10.10.20.1
 10.10.20.2
 10.10.20.3
 10.10.20.4
