@@ -36,3 +36,6 @@ cluster_name=kubeadm_1
 #
 
 [nodes:vars]
+
+[devbox]
+10.10.20.20

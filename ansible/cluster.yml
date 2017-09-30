@@ -55,18 +55,38 @@
       with_items:
         - cp /etc/kubernetes/admin.conf $HOME/
         - chmod a+rw $HOME/admin.conf
-        #- export KUBECONFIG=$HOME/admin.conf
       register: kubectl_env
       tags:
         - master
 
+    - name: backup certs to local
+      fetch:
+        src: /root/admin.conf
+        dest: /root/
+        flat: yes
+        mode: 0666
+      tags: 
+        - master
+       
     - debug:
         var: kubectl_env.results
 
-- hosts: "{{ hostvars.localhost.groups.nodes | join(',') }}"
-
+- hosts: devbox
   become: true
-
+  tasks:
+    - name: copy certs to devbox
+      copy:
+        src: /root/admin.conf
+        dest: /root/
+        mode: 0666
+      register: certs_dup
+      tags:
+        - devbox
+    - debug:
+       var: certs_dup.stdout_lines
+   
+- hosts: "{{ hostvars.localhost.groups.nodes | join(',') }}"
+  become: true
   roles:
 
     - role: kubeadm_install
